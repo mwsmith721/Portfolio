@@ -1,0 +1,340 @@
+/*  Fonts:
+font-family: 'Bebas Neue', cursive; <-h2 &h3
+font-family: 'Dancing Script', cursive; <-h1
+font-family: 'Della Respira', serif; <-text*/
+
+/* Colors
+Background = background: linear-gradient(180deg, hsla(53, 84%, 74%, 1) 0%, hsla(336, 87%, 61%, 1) 50%, hsla(262, 81%, 71%, 1) 100%);
+Other Color: 
+    #6D6A75 = Grey Lavender
+    #140012 = Dark Purple/Black
+    #51A3A3 = Teal
+    #F2E9E4 = Whitish
+    #EEE0CB = Beige
+*/
+
+
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(180deg, hsla(53, 84%, 74%, .5) 0%, hsla(336, 87%, 61%, .6) 50%, hsla(262, 81%, 71%, .8) 100%);
+    margin: 0;
+    font-size: 1em;
+    font-family: 'Della Respira', serif;
+    color: #140012;
+    
+}
+
+/* html =<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script&effect=3d-float">
+.font-effect-3d-float {
+    color: #6D6A75;
+}
+*/
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    grid-template-rows: .02fr 1fr 1fr .1fr;
+    grid-template-areas: 
+        "title title nav nav"
+        "skill image1 image2 image3"
+        "skill image4 image5 image6"
+        "footer footer footer footer";
+    gap: 1em;
+}
+
+h1, h2 {
+    
+
+    color: rgb(240, 109, 161);
+    font-family: 'Dancing Script', cursive;
+    
+}
+h1 {
+    font-size: 5em;   
+    
+}
+
+h2 {
+    font-size: 3em;
+}
+.name-container {
+    
+    grid-area: title;
+    line-height: 1.3em;
+    
+    padding: 8em 0 0 2em;
+    text-align: left;
+}
+
+h3, h4 {
+    
+    font-size: 2em;
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+/* Navigation Menu */
+.navigation-bar {
+   grid-area: nav;
+  
+   
+
+}
+.navigation-bar ul {
+    float: right;
+    padding-top: 15em;
+    list-style: none; 
+    color:#6D6A75;
+    display: flex;
+    padding-right: 2em;
+}
+
+.navigation-bar ul li {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bold;
+    font-size: 1.8em; 
+    padding: .3em; 
+    cursor: pointer;
+    display: inline-block;
+    
+}
+
+.navigation-bar ul li:hover {
+    background: hsla(262, 81%, 71%, .6);
+    border-radius: .5em;
+    color: #140012;
+}
+
+/*   Skills Section  */
+
+.skill-container {
+    grid-area: skill;
+   
+    
+    background: #6D6A75;
+    color: #EEE0CB; 
+    
+   
+    padding: 2em;
+    
+}
+.skill-container ul {
+    font-size: 1.2em;
+    line-height: 2em;
+
+}
+
+/*  Projects */
+img {
+	display: block;
+	border: 0;
+	/*width: 100%;*/
+    width: 350px;
+    height:350px;
+    object-fit: cover;
+    overflow: hidden;
+    
+   
+	
+}
+.chunk {
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    
+
+    
+}
+.caption {
+	padding: 1em;
+	background: #6D6A75;
+	color: #EEE0CB;
+	font-size: 1.2em;
+	transition: all .4s;
+    width: 350px;
+}
+img:focus .caption,
+img:hover .caption {
+	background: #6D6A75;
+}
+.caption-title {
+	margin: 0;
+	font-size: 1.4em;
+	line-height: 1.1em;
+    
+}
+.P1 .P2 .P3 .P4 .P5 .P6 a {
+	display: block;
+	margin-bottom: 1em;
+   
+	
+}
+a:focus .caption,
+a:hover .caption {
+	background:  #140012;
+    text-decoration: none;
+}
+a:link {
+    text-decoration: none;
+}
+
+
+/* Footer */
+footer {
+    grid-area: footer;
+    background:  #140012;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.footer-style h2 {
+    padding: 0;
+    color: #EEE0CB;
+    text-align: center;
+}
+.footer-style ul li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0% 1% 2% 1%;
+    font-size: 1.2em; 
+
+}
+
+.footer-style a {
+    color:#EEE0CB;
+    font-family: 'Della Respira', serif;
+    font-size: 1.2em;
+    font-variant: small-caps;
+}
+
+/*   Responsive  */
+@media screen and (max-width: 1420px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: .02fr .02fr 1fr 1fr 1fr 1fr .5fr;
+        grid-template-areas: 
+        "title title"
+        "nav nav"
+        "skill skill"
+        "image1 image2"
+        "image3 image4"
+        "image5 image6"
+        "footer footer"
+       
+    }
+    .name-container {
+        padding-bottom: 0;
+    }
+    .skill-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-flow: row;
+      
+    }
+    .soft {
+        padding-left: 3em;
+       
+    }
+    img {
+        display: block;
+        border: 0;
+       
+        width: 450px;
+        height:450px;
+        object-fit: cover;
+        overflow: hidden;
+    }
+    .caption {
+        width: 450px;
+    }
+}
+@media screen and (max-width: 1055px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+        flex-flow: column;
+        flex-wrap: wrap;
+       
+    }
+    .name-container {
+        padding-top: 8em;
+        text-align: left;
+    }
+    .skill-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-flow: row;
+        
+    }
+    .soft {
+        padding-left: 3em ;
+        float: right;
+    }
+    .navigation-bar ul {
+        padding: 0;
+        float:right;
+    }
+   
+}
+@media screen and (max-width: 845px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+        flex-flow: column;
+        flex-wrap: wrap;
+       
+    }
+    .name-container {
+        padding-top: 8em;
+        text-align: left;
+    }
+    .skill-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-flow: column;
+        
+    }
+    .soft {
+        padding: 0;
+    }
+    .navigation-bar ul {
+        padding-left: 2em;
+        float:left;
+    }
+   
+}
+@media screen and (max-width: 450px) {
+    .name-container {
+        line-height: .5em;
+        padding-top: 1em;
+        display: flex;
+        flex-flow: wrap;
+        text-align: left;
+    }
+    h1 {
+        font-size: 4em;
+    }
+    h2 {
+        font-size:3em;
+    }
+img {
+        display: block;
+        border: 0;
+       
+        width: 200px;
+        height:200px;
+        object-fit: cover;
+        overflow: hidden;
+    }
+    .caption {
+        width: 200px;
+    }
+}
